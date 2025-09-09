@@ -1,4 +1,4 @@
- #include <stdio.h>
+#include <stdio.h>
  
    void afichage(int tab[],int nmbNote){
      printf("Les notes sont :\n");
@@ -11,40 +11,59 @@
 
    void maxv(int tab[],int nmbNote)
    {
-    int max,temp1;
+    int max;
     max=tab[0];
     for (int i = 1; i <nmbNote; i++)
     { if ( tab[i]>max)
       max=tab[i];
     }
-    printf("%d est la note maximale",max);
+    printf("%d est la note maximale.\n",max);
 
    }
-   void moyennzze(int moyenne,int nmbNote){
-    int moyenne,somme;
-    moyenne=somme/nmbNote;
+   
+  void min(int tab[],int nmbNote)
+   {
+    int min;
+    min=tab[0];
+    for (int i = 1; i <nmbNote; i++)
+    { if ( tab[i]<min)
+      min=tab[i];
+    }
+    printf("\n %d est la note minimum.\n",min);
 
+   } 
+   
+    void moyennzze(int nmbNote,int tab[])
+    {
+    int moyenne,somme;
+    somme=0;
+    
+    for (int i=0 ; i<nmbNote; i++)
+    { somme = somme + tab[i];
+    }
+    moyenne=somme/nmbNote;
+    printf("le moyenne est %d.",moyenne );
 
    }
    
    int main(){ 
    int nmbNote;
-     printf("entrer le nombre des notes: ");
+    printf("entrer le nombre des notes: ");
      scanf("%d",&nmbNote);
   
-    int tab[nmbNote];
-    for( int i=0; i<nmbNote; i++) 
-   {
+     int tab[nmbNote];
+     for( int i=0; i<nmbNote; i++) 
+    {
       printf("Entrer la note %d: ", i+1);
       scanf(" %d", &tab[i] );
-   }
+    }
    
   
     afichage(tab,nmbNote);
     maxv(tab,nmbNote);
-    moyennze(moyenne,nmbNote);
+    min(tab,nmbNote); 
+    moyennzze(nmbNote,tab);
     
-   
    
    return 0;
  }
