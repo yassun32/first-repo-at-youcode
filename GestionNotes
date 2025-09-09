@@ -20,7 +20,7 @@
     printf("%d est la note maximale",max);
 
    }
-   void moyennze(int moyenne,int nmbNote){
+   void moyennzze(int moyenne,int nmbNote){
     int moyenne,somme;
     moyenne=somme/nmbNote;
 
